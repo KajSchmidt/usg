@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="sv">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title></title>
+    <style>
+      body {
+        background-image:url('bubblor.jpg');
+        background-size:cover;
+      }
+
+      .form-clean {
+        border:none;
+        background:none
+      }
+
+      #usg-form {
+        font-size: 1.3em;
+        background-color:#ffffff;
+        margin-top:25vh;
+      }
+
+      #usg-response {
+        font-size: 1em;
+        background-color:rgba(255,255,255,0.9);
+        padding-top: 2em;
+      }
+
+    </style>
+
+    <script>
+      function saveResponse() {
+        let html = "<p>";
+        html += "Som en ";
+        html += $('#form-identies').val();
+        html += " ";
+        html += $('#form-places').val();
+        html += " vill jag ";
+        html += $('#form-goals').val();
+        html += ", så att jag ";
+        html += $('#form-reasons').val();
+        html += ".</p>";
+        $('#usg-response>div>div').append(html);
+      }
+    </script>
+  </head>
+  <body>
+
+
+    <form id="usg-form" name="usg-form">
+      <div class="form-row">
+       <div class="form-group col d-flex justify-content-center align-items-center align-self-center flex-wrap">
+        <div>Som en </div>
+        <input type="text" name="form-identies" id="form-identies"  class="form-control-lg form-clean" placeholder="superhjälte" list="identies">
+        <input type="text" name="form-places" id="form-places" class="form-control-lg form-clean" placeholder="på skolan" list="places">
+        <span> vill jag </span>
+        <input type="text" name="form-goals" id="form-goals" class="form-control-lg form-clean" placeholder="lära mig flyga" list="goals">
+        <span>, så att jag kan </span>
+        <input type="text" name="form-reasons" id="form-reasons" class="form-control-lg form-clean" placeholder="rädda katter ut träd" list="reasons">
+        <button type="button" class="btn btn-outline-success" onclick="saveResponse()">&gt;</button>
+       </div>
+      </div>
+    <datalist id="identies">
+      <option value="elev">
+      <option value="gamer">
+      <option value="superhjälte">
+      <option value="kattälskare">
+      <option value="blivande expert">
+    </datalist>
+
+    <datalist id="places">
+      <option value="på skolan">
+      <option value="i kursen Engelska 6">
+      <option value="på fritiden">
+      <option value="på Amazonfloden">
+      <option value="i rymden">
+    </datalist>
+
+
+    <datalist id="goals">
+      <option value="lära mig flyga">
+      <option value="lära mig photoshop">
+      <option value="få återkoppling">
+      <option value="få högsta betyg">
+      <option value="äta muffins">
+    </datalist>
+
+
+    <datalist id="reasons">
+      <option value="rädda världen">
+      <option value="göra en hemsida">
+      <option value="läsa på universitet">
+      <option value="åka utomlands">
+      <option value="bli bäst">
+    </datalist>
+
+    </form>
+    <div id="usg-response">
+      <div class="row">
+        <div class="col d-flex flex-column justify-content-center align-items-center align-self-center">
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
