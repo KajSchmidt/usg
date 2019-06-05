@@ -36,6 +36,11 @@
 
     <script>
       function saveResponse() {
+        if (!$('#form-identies').val()) { return; }
+        if (!$('#form-places').val()) { return; }
+        if (!$('#form-goals').val()) { return; }
+        if (!$('#form-reasons').val()) { return; }
+
         let html = "<p>";
         html += "Som en ";
         html += $('#form-identies').val();
@@ -47,6 +52,11 @@
         html += $('#form-reasons').val();
         html += ".</p>";
         $('#usg-response>div>div').append(html);
+
+        $('#form-identies').val('')
+        $('#form-places').val('');
+        $('#form-goals').val('');
+        $('#form-reasons').val('');
       }
     </script>
   </head>
@@ -57,7 +67,7 @@
       <div class="form-row">
        <div class="form-group col d-flex justify-content-center align-items-center align-self-center flex-wrap">
         <div>Som en </div>
-        <input type="text" name="form-identies" id="form-identies"  class="form-control-lg form-clean" placeholder="superhjälte" list="identies">
+        <input type="text" name="form-identies" id="form-identies"  class="form-control-lg form-clean" val="superhjälte" list="identies">
         <input type="text" name="form-places" id="form-places" class="form-control-lg form-clean" placeholder="på skolan" list="places">
         <span> vill jag </span>
         <input type="text" name="form-goals" id="form-goals" class="form-control-lg form-clean" placeholder="lära mig flyga" list="goals">
